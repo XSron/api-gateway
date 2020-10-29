@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ess</groupId>
-	<artifactId>api-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>api-gateway</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>ess-api-gateway</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>ess-api-gateway</name>
+	<description>ESS project - api gateway</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -95,7 +95,6 @@
 			<artifactId>maven-jaxb2-plugin</artifactId>
 			<version>0.14.0</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -103,11 +102,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<inherited>true</inherited>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
