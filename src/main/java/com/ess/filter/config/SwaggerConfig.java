@@ -31,7 +31,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("mp.group3.auth.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.ess.filter.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .securityContexts(Collections.singletonList(securityContext()))

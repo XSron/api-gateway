@@ -48,7 +48,7 @@ public class UserServiceImplement implements UserService {
 
     @Override
     public User findByUsername(String name) {
-        return restTemplate.getForObject(configValue.getUserUrl()+"/user/"+name, User.class);
+        return restTemplate.getForObject(configValue.getUserUrl()+"user/"+name, User.class);
     }
 
     private Set getAuthority(User user) {

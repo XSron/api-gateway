@@ -13,9 +13,8 @@ public class OAuth2ResourceServerConfigJwt extends ResourceServerConfigurerAdapt
     public void configure(final HttpSecurity http) throws Exception {
         http.antMatcher("/**")
                 .authorizeRequests()
-                .antMatchers("/oauth/token").permitAll()
+                .antMatchers("/oauth/token", "/ess-user-service/user/**").permitAll()
                 .antMatchers("/api/**").authenticated()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }
 }
