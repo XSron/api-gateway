@@ -1,15 +1,14 @@
 package com.ess.filter.service.impl;
 
-import com.ess.filter.config.ConfigValue;
 import com.ess.filter.entity.User;
 import com.ess.filter.service.UserService;
+import com.ess.filter.service.naming.UserServiceApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,23 +16,11 @@ import java.util.Set;
 @Service
 public class UserServiceImplement implements UserService {
 
-    public PasswordEncoder passwordEncoder;
-    private ConfigValue configValue;
-    private RestTemplate restTemplate;
+    private UserServiceApi userServiceApi;
 
     @Autowired
-    public void setConfigValue(ConfigValue configValue) {
-        this.configValue = configValue;
-    }
-
-    @Autowired
-    public void setRestTemplate(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
-
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
+    public UserServiceImplement(UserServiceApi userServiceApi) {
+        this.userServiceApi = userServiceApi;
     }
 
     @Override
@@ -48,7 +35,7 @@ public class UserServiceImplement implements UserService {
 
     @Override
     public User findByUsername(String name) {
-        return restTemplate.getForObject(configValue.getUserUrl()+"user/"+name, User.class);
+        return userServiceApi.findUSerByName(name);
     }
 
     private Set getAuthority(User user) {
