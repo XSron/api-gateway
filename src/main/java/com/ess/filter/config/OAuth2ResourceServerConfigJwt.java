@@ -15,6 +15,8 @@ public class OAuth2ResourceServerConfigJwt extends ResourceServerConfigurerAdapt
                 .authorizeRequests()
                 .antMatchers("/oauth/token", "/user-service/user/**").permitAll()
                 .antMatchers("/api/**").authenticated()
+                .antMatchers("/api/users/roles")
+                .hasAnyRole("ADMIN", "admin", "ROLE_ADMIN", "ROLE_admin")
                 .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }
 }
