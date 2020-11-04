@@ -15,4 +15,9 @@ public class AuthenticationController {
     public ResponseEntity<?> checkApi() throws Exception {
         return ResponseEntity.ok("Authentication Service running api");
     }
+
+    @RequestMapping(value = "/api/admin", method = RequestMethod.GET)
+    public ResponseEntity<?> checkAdmin() throws Exception {
+        return ResponseEntity.ok("Authentication checkAdmin running api");
+    }
 }
