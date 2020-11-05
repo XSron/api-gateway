@@ -28,4 +28,19 @@ public class ConfigValue {
     @Value("${url.user}")
     private String userUrl;
 
+    @Value("${url.product}")
+    private String productUrl;
+
+    @Value("${url.report}")
+    private String reportUrl;
+
+    @Value("${url.upload}")
+    private String uploadUrl;
+
+    @Value("${url.payment}")
+    private String paymentUrl;
+
+    @Value("${url.shopping}")
+    private String shoppingUrl;
+
 }

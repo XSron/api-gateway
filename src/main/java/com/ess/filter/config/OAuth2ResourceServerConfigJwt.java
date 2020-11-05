@@ -13,7 +13,7 @@ public class OAuth2ResourceServerConfigJwt extends ResourceServerConfigurerAdapt
 
     String admin = "ROLE_admin";
     String vendor = "ROLE_vendor";
-    String client = " ROLE_client";
+//    String client = " ROLE_client";
 
     @Override
     public void configure(final HttpSecurity http) throws Exception {
